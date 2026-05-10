@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Register — TaskFlow{% endblock %}
+{% block body %}
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <div class="logo-icon">✦</div>
+      <span class="logo-text">TaskFlow</span>
+    </div>
+    <h1 class="auth-title">Create account</h1>
+    <p class="auth-sub">Start organising your tasks today</p>
+
+    <div id="auth-error"   class="alert alert-error"   style="display:none"></div>
+    <div id="auth-success" class="alert alert-success" style="display:none"></div>
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="yourname" autocomplete="username"/>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="you@example.com" autocomplete="email"/>
+    </div>
+    <div class="form-group">
+      <label for="password">Password <span class="label-hint">(min 6 chars)</span></label>
+      <input type="password" id="password" placeholder="••••••••" autocomplete="new-password"/>
+    </div>
+
+    <button class="btn btn-primary btn-full" id="reg-btn">Create account</button>
+    <p class="auth-switch">Already have an account? <a href="/auth/login">Sign in</a></p>
+  </div>
+</div>
+<script>
+  document.getElementById('reg-btn').addEventListener('click',async()=>{
+    const btn=document.getElementById('reg-btn');
+    const err=document.getElementById('auth-error');
+    const ok=document.getElementById('auth-success');
+    btn.disabled=true; btn.textContent='Creating…'; err.style.display='none'; ok.style.display='none';
+    const res=await fetch('/auth/api/register',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({username:document.getElementById('username').value,
+        email:document.getElementById('email').value,password:document.getElementById('password').value})});
+    const data=await res.json();
+    if(res.ok){ok.textContent='Account created! Redirecting…';ok.style.display='block';setTimeout(()=>window.location.href='/',800);}
+    else{err.textContent=data.error||'Registration failed';err.style.display='block';btn.disabled=false;btn.textContent='Create account';}
+  });
+</script>
+{% endblock %}
