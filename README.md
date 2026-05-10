@@ -1,16 +1,13 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=0,2,2,5,30&height=160&text=⚡+TASKFLOW&fontSize=60&fontColor=ffffff&fontAlignY=55&desc=Python+%7C+Flask+%7C+PostgreSQL+%7C+WebSockets+%7C+Pandas&descAlignY=80&descSize=14&descColor=a5b4fc&stroke=6C63FF&strokeWidth=2" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:0f0c29,50:302b63,100:24243e&height=180&text=TASKFLOW&fontSize=72&fontColor=ffffff&fontAlignY=50&desc=─────────────────────────────────&descAlignY=68&descSize=18&descColor=7c6dff&animation=blinking&stroke=7c6dff&strokeWidth=1" width="100%"/>
 
 <br/>
 
-<table><tr><td>
-&nbsp;&nbsp;🚀&nbsp;&nbsp;<strong>Real-time</strong> task updates via WebSockets &nbsp;&nbsp;
-</td><td>
-&nbsp;&nbsp;📊&nbsp;&nbsp;<strong>Analytics</strong> powered by Pandas &amp; NumPy &nbsp;&nbsp;
-</td><td>
-&nbsp;&nbsp;🔐&nbsp;&nbsp;<strong>Secure</strong> auth with Flask-Login &nbsp;&nbsp;
-</td></tr></table>
+```
+  ✦ Python 3.12    ✦ Flask 3.0      ✦ PostgreSQL 17
+  ✦ Pandas 2.2     ✦ NumPy 1.26     ✦ WebSockets Live
+```
 
 <br/>
 
